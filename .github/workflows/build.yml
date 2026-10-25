@@ -2,7 +2,10 @@ name: Build
 # See details in .github/workflows/README.md (workflow docs)
 run-name: "CI build for ${{ github.ref_name }}"
 
-on: [push, pull_request]
+on:
+  push:
+    branches-ignore: [vevor-fix]   # eigener Workflow vevor-build.yml
+  pull_request:
 
 jobs:
   determine-build-scope:
